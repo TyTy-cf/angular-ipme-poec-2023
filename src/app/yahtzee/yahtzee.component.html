@@ -1,0 +1,17 @@
+
+<div>
+  <button class="btn btn-primary" (click)="yahtzee.start()">
+    New throw
+  </button>
+  <button class="btn btn-primary" (click)="yahtzee.reroll()">
+    Reroll
+  </button>
+  <div *ngIf="yahtzee.dices.length > 0" class="d-flex">
+    <img *ngFor="let dice of yahtzee.dices"
+         class="dice"
+         [src]="dice.image"
+         [class.is-selected]="dice.isSelected"
+         (click)="dice.isSelected = !dice.isSelected"
+    >
+  </div>
+</div>

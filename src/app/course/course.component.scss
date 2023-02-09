@@ -18,3 +18,23 @@
   }
 
 }
+
+
+.compteur {
+
+  color: white;
+
+  &.reset {
+    color: black;
+    background-color: #ffeb00;
+  }
+
+  &.positive {
+    background-color: #009c29;
+  }
+
+  &.negative {
+    background-color: #ab000f;
+  }
+}
+

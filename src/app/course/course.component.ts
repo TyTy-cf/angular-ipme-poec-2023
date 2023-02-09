@@ -36,4 +36,20 @@ export class CourseComponent implements OnInit {
       this.age = (new Date()).getFullYear() - this.yob;
     }
   }
+
+  // Correction compteur
+
+  private _compteur: number = 0;
+
+  get compteur(): number {
+    return this._compteur;
+  }
+
+  set compteur(value: number) {
+    this._compteur = value;
+  }
+
+  increment(value: number) {
+    this._compteur += value;
+  }
 }
