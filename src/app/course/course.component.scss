@@ -1,0 +1,20 @@
+
+.age {
+
+  background-color: darkgrey;
+  font-weight: 650;
+  font-size: 1.5em;
+
+  &.orange {
+    color: orange;
+  }
+
+  &.green {
+    color: green;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+}
