@@ -8,6 +8,7 @@ import { CourseComponent } from './course/course.component';
 import { YahtzeeComponent } from './yahtzee/yahtzee.component';
 import {HttpClientModule} from "@angular/common/http";
 import { KaamelotQuoteComponent } from './kaamelot-quote/kaamelot-quote.component';
+import { PokemonIndexComponent } from './pokemon-index/pokemon-index.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { KaamelotQuoteComponent } from './kaamelot-quote/kaamelot-quote.componen
       NavbarComponent,
       CourseComponent,
       YahtzeeComponent,
-      KaamelotQuoteComponent
+      KaamelotQuoteComponent,
+      PokemonIndexComponent
   ],
   imports: [
     BrowserModule,

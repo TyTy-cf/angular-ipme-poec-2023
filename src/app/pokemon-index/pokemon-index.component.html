@@ -1,0 +1,29 @@
+
+<div class="container">
+  <div *ngIf="iPokeApiResponse; else loading">
+    <div class="d-flex justify-content-around">
+      <button class="btn btn-primary" (click)="getPage(iPokeApiResponse.previous)">
+        <
+      </button>
+      <button class="btn btn-primary" (click)="getPage(iPokeApiResponse.next)">
+        >
+      </button>
+    </div>
+    <div class="row" *ngIf="pokemons.length == 20; else loading">
+      <div class="col-2" *ngFor="let poke of pokemons">
+        <img class="img-fluid"
+             [src]="poke.isDisplayShiny ? poke.imageShiny : poke.imageDefault"
+             (mouseenter)="poke.isDisplayShiny = !poke.isDisplayShiny"
+             (mouseleave)="poke.isDisplayShiny = !poke.isDisplayShiny"
+        >
+        <p class="text-center">
+          {{poke.name|titlecase}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p>Ca charge...</p>
+</ng-template>
