@@ -23,6 +23,7 @@ export class CourseComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       if (params['yob']) {
         this.yob = params['yob'];
+        this.calculateAge();
       }
     });
   }

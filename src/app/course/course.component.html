@@ -4,20 +4,17 @@
     {{ title|uppercase }}
   </h1>
 
-  <button class="btn btn-primary" (click)="calculateAge()" [disabled]="age > 0">
-    CLick me !
-  </button>
-
-  <div *ngIf="age > 0; else noAge">
+  <div *ngIf="yob">
     <ul>
       <li>
-        Age pour 1980 :
+        Age pour {{ yob }} :
       </li>
       <li class="age" [class.orange]="age > 30" [class.green]="age <= 30">
         {{ age }}
       </li>
     </ul>
   </div>
+
   <div *ngIf="item">
     <ul>
       <li *ngFor="let rank of ranks; let index = index">

@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CourseComponent } from './course/course.component';
 import { YahtzeeComponent } from './yahtzee/yahtzee.component';
+import {HttpClientModule} from "@angular/common/http";
+import { KaamelotQuoteComponent } from './kaamelot-quote/kaamelot-quote.component';
 
 @NgModule({
   declarations: [
       AppComponent,
       NavbarComponent,
       CourseComponent,
-      YahtzeeComponent
+      YahtzeeComponent,
+      KaamelotQuoteComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

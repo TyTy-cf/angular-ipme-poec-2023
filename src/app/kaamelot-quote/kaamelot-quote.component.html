@@ -1,0 +1,16 @@
+
+<div class="text-danger" *ngIf="error; else quoteBlock">
+  {{ error }}
+</div>
+
+<ng-template #quoteBlock>
+  <div *ngIf="quote; else waitingQuote">
+    <p>
+      {{ quote }}
+    </p>
+  </div>
+</ng-template>
+
+<ng-template #waitingQuote>
+  <p>La requête charge...</p>
+</ng-template>
