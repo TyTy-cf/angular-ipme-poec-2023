@@ -9,6 +9,8 @@ import { YahtzeeComponent } from './yahtzee/yahtzee.component';
 import {HttpClientModule} from "@angular/common/http";
 import { KaamelotQuoteComponent } from './kaamelot-quote/kaamelot-quote.component';
 import { PokemonIndexComponent } from './pokemon-index/pokemon-index.component';
+import { SteamishHomeComponent } from './steamish-home/steamish-home.component';
+import { GameCardComponent } from './game-card/game-card.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +19,21 @@ import { PokemonIndexComponent } from './pokemon-index/pokemon-index.component';
       CourseComponent,
       YahtzeeComponent,
       KaamelotQuoteComponent,
-      PokemonIndexComponent
+      PokemonIndexComponent,
+      SteamishHomeComponent,
+      GameCardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'rawUrl',
+      useValue: 'https://steam-ish.test-02.drosalys.net/api/'
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

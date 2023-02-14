@@ -1,0 +1,26 @@
+
+<div *ngIf="games.length > 0; else noGame">
+  <h2 class="text-center my-5">
+    {{ title }}
+  </h2>
+  <div class="row">
+    <div class="col-lg-3 col-md-6 card-game mt-3" *ngFor="let game of games">
+      <div class="container-image">
+        <img [src]="game.thumbnailCover">
+        <p class="price">
+          {{game.price}}€
+        </p>
+      </div>
+      <h4 class="text-center">
+        {{game.name}}
+      </h4>
+    </div>
+  </div>
+</div>
+
+<ng-template #noGame>
+  <div class="background-dark">
+    <div class="spinner-border text-light position-relative d-flex mx-auto loader" role="status">
+    </div>
+  </div>
+</ng-template>

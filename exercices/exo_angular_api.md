@@ -7,7 +7,7 @@
 
 - Créer un component **home**
 - Je veux voir afficher plusieurs jeux :
-  - 6 jeux triés par date de sortie croissante
+  - 6 jeux triés par date de sortie décroissante (publishedAt DESC)
   - 6 jeux triés par nom croissant
   - 6 jeux triés par prix décroissant
 

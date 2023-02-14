@@ -1,0 +1,19 @@
+
+<div class="container">
+
+  <app-game-card
+    [title]="'Les dernières sorties'"
+    [games]="gamesByPublishedAt"
+  ></app-game-card>
+
+  <app-game-card
+    [title]="'Nos jeux'"
+    [games]="gamesByName"
+  ></app-game-card>
+
+  <app-game-card
+    [title]="'Nos meilleures ventes'"
+    [games]="gamesByPrice"
+  ></app-game-card>
+
+</div>

@@ -4,6 +4,7 @@ import {CourseComponent} from "./course/course.component";
 import {YahtzeeComponent} from "./yahtzee/yahtzee.component";
 import {KaamelotQuoteComponent} from "./kaamelot-quote/kaamelot-quote.component";
 import {PokemonIndexComponent} from "./pokemon-index/pokemon-index.component";
+import {SteamishHomeComponent} from "./steamish-home/steamish-home.component";
 
 const routes: Routes = [
   { path: 'cours', component: CourseComponent },
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'yahtzee', component: YahtzeeComponent },
   { path: 'kaamelot', component: KaamelotQuoteComponent },
   { path: 'pokemon', component: PokemonIndexComponent },
+  { path: 'steamish', component: SteamishHomeComponent },
 ];
 
 @NgModule({
