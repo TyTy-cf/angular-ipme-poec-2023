@@ -1,5 +1,6 @@
+import {IPostItem} from "./i-post-item";
 
-export class Publisher {
+export class Publisher implements IPostItem {
 
   private _name: string = '';
   private _website: string = '';
@@ -32,4 +33,13 @@ export class Publisher {
   set country(value: { slug: string }) {
     this._country = value;
   }
+
+  getPostItem() {
+    return {
+      name: this._name,
+      website: this._website,
+      country: this._country
+    }
+  }
+
 }

@@ -14,6 +14,7 @@ import { GameCardComponent } from './steamish/game-card/game-card.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { PublisherFormTDComponent } from './steamish/publisher-form-t-d/publisher-form-t-d.component';
 import { PublisherFormComponent } from './steamish/publisher-form/publisher-form.component';
+import { AccountFormComponent } from './steamish/account-form/account-form.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { PublisherFormComponent } from './steamish/publisher-form/publisher-form
       GameCardComponent,
       PublisherFormTDComponent,
       PublisherFormComponent,
+      AccountFormComponent,
   ],
   imports: [
     BrowserModule,

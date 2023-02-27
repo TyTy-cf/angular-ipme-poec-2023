@@ -2,6 +2,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {ISteamishResponse} from "../../model/steamish/i-steamish-response";
 import {sprintf} from "sprintf-js";
+import {IPostItem} from "../../model/steamish/i-post-item";
 
 export abstract class AbstractRepositoryService<T> {
 
@@ -26,10 +27,10 @@ export abstract class AbstractRepositoryService<T> {
     return this.httpClient.get<T>(sprintf('%s%s/%s', this.rawUrl, this.endPoint, slug));
   }
 
-  save(item: T): Observable<T> {
+  save(item: IPostItem): Observable<T> {
     return this.httpClient.post<T>(
       sprintf('%s%s', this.rawUrl, this.endPoint),
-      item,
+      item.getPostItem(),
       this.headers
     );
   }

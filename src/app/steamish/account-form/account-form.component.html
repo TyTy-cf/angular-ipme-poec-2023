@@ -1,0 +1,37 @@
+
+<h1>Nouveau compte</h1>
+<form [formGroup]="formGroupAccount">
+  <input
+    class="form-control"
+    formControlName="name"
+    placeholder="Name"
+    [class.is-invalid]="isFieldOnError('name')"
+    [class.is-valid]="name.valid"
+  >
+  <input
+    class="form-control"
+    formControlName="email"
+    placeholder="Email"
+    [class.is-invalid]="isFieldOnError('email')"
+    [class.is-valid]="email.valid"
+  >
+  <input
+    class="form-control"
+    formControlName="password"
+    placeholder="Password"
+    type="password"
+    [class.is-invalid]="isFieldOnError('password')"
+    [class.is-valid]="password.valid"
+  >
+  <input
+    class="form-control"
+    formControlName="nickname"
+    placeholder="Nickname"
+    [class.is-invalid]="isFieldOnError('nickname')"
+    [class.is-valid]="nickname.valid"
+  >
+  <button class="btn btn-primary" (click)="onSubmit()">
+    OK
+  </button>
+
+</form>

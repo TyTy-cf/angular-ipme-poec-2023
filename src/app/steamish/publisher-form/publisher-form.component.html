@@ -6,11 +6,11 @@
       class="form-control"
       formControlName="name"
       placeholder="Name"
-      [class.is-invalid]="name.invalid && (name.touched || name.dirty)"
+      [class.is-invalid]="isFieldOnError('name')"
       [class.is-valid]="name.valid"
     >
     <div class="invalid-feedback"
-         *ngIf="name.invalid && (name.touched || name.dirty) && name.errors"
+         *ngIf="isFieldOnError('name') && name.errors"
     >
       <div *ngIf="name.errors['required']">
         Le nom est obligatoire
@@ -22,11 +22,11 @@
       class="form-control"
       formControlName="website"
       placeholder="Website"
-      [class.is-invalid]="website.invalid && (website.touched || website.dirty)"
+      [class.is-invalid]="isFieldOnError('website')"
       [class.is-valid]="website.valid"
     >
     <div class="invalid-feedback"
-         *ngIf="website.invalid && (website.touched || website.dirty) && website.errors"
+         *ngIf="isFieldOnError('website') && website.errors"
     >
       <div *ngIf="website.errors['required']">
         Le website est obligatoire
@@ -41,20 +41,32 @@
       class="form-control"
       formControlName="country"
       placeholder="Country"
-      [class.is-invalid]="country.invalid && (country.touched || country.dirty)"
+      [class.is-invalid]="isFieldOnError('country')"
       [class.is-valid]="country.valid"
     >
     <div class="invalid-feedback"
-         *ngIf="website.invalid && (country.touched || country.dirty) && country.errors"
+         *ngIf="isFieldOnError('country') && country.errors"
     >
       <div *ngIf="country.errors['required']">
         Le pays est obligatoire
       </div>
     </div>
   </div>
+  <div *ngIf="error" class="invalid-feedback">
+    {{ error }}
+  </div>
 </form>
 
-<button class="btn btn-primary mt-5 d-flex mx-auto" (click)="onSubmit()" [disabled]="formGroupPublisher.invalid">
+<button class="btn btn-primary mt-5 d-flex mx-auto"
+        (click)="onSubmit()"
+        [disabled]="formGroupPublisher.invalid"
+>
   Soumettre
+</button>
+
+<button class="btn btn-success mt-5 d-flex mx-auto"
+        (click)="testLogin()"
+>
+  Login
 </button>
 
