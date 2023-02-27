@@ -5,6 +5,7 @@ import {YahtzeeComponent} from "./yahtzee/yahtzee.component";
 import {KaamelotQuoteComponent} from "./kaamelot-quote/kaamelot-quote.component";
 import {PokemonIndexComponent} from "./pokemon-index/pokemon-index.component";
 import {SteamishHomeComponent} from "./steamish/steamish-home/steamish-home.component";
+import {PublisherFormTDComponent} from "./steamish/publisher-form-t-d/publisher-form-t-d.component";
 import {PublisherFormComponent} from "./steamish/publisher-form/publisher-form.component";
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'yahtzee', component: YahtzeeComponent },
   { path: 'kaamelot', component: KaamelotQuoteComponent },
   { path: 'pokemon', component: PokemonIndexComponent },
+  { path: 'steamish/publisher/new-template', component: PublisherFormTDComponent },
   { path: 'steamish/publisher/new', component: PublisherFormComponent },
   { path: 'steamish', component: SteamishHomeComponent },
 ];

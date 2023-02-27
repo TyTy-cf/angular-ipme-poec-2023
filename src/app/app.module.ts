@@ -11,7 +11,8 @@ import { KaamelotQuoteComponent } from './kaamelot-quote/kaamelot-quote.componen
 import { PokemonIndexComponent } from './pokemon-index/pokemon-index.component';
 import { SteamishHomeComponent } from './steamish/steamish-home/steamish-home.component';
 import { GameCardComponent } from './steamish/game-card/game-card.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { PublisherFormTDComponent } from './steamish/publisher-form-t-d/publisher-form-t-d.component';
 import { PublisherFormComponent } from './steamish/publisher-form/publisher-form.component';
 
 @NgModule({
@@ -24,13 +25,15 @@ import { PublisherFormComponent } from './steamish/publisher-form/publisher-form
       PokemonIndexComponent,
       SteamishHomeComponent,
       GameCardComponent,
-      PublisherFormComponent
+      PublisherFormTDComponent,
+      PublisherFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     {
