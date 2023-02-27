@@ -1,9 +1,15 @@
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {ISteamishResponse} from "../../model/steamish/i-steamish-response";
 import {sprintf} from "sprintf-js";
 
 export abstract class AbstractRepositoryService<T> {
+
+  protected headers: {headers: HttpHeaders} = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    })
+  };
 
   protected constructor(
     protected httpClient: HttpClient,
@@ -18,6 +24,14 @@ export abstract class AbstractRepositoryService<T> {
 
   findOneBySlug(slug: string): Observable<T> {
     return this.httpClient.get<T>(sprintf('%s%s/%s', this.rawUrl, this.endPoint, slug));
+  }
+
+  save(item: T): Observable<T> {
+    return this.httpClient.post<T>(
+      sprintf('%s%s', this.rawUrl, this.endPoint),
+      item,
+      this.headers
+    );
   }
 
 }

@@ -3,10 +3,10 @@ import {Publisher} from "../../../model/steamish/publisher";
 
 @Component({
   selector: 'app-publisher-form',
-  templateUrl: './publisher-form.component.html',
-  styleUrls: ['./publisher-form.component.scss']
+  templateUrl: './publisher-form-t-d.component.html',
+  styleUrls: ['./publisher-form-t-d.component.scss']
 })
-export class PublisherFormComponent {
+export class PublisherFormTDComponent {
 
   publisher: Publisher = new Publisher();
   title: string = 'Nouvel éditeur';

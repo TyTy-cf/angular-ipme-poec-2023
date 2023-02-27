@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PublisherFormComponent } from './publisher-form.component';
+import { PublisherFormTDComponent } from './publisher-form-t-d.component';
 
 describe('PublisherFormComponent', () => {
-  let component: PublisherFormComponent;
-  let fixture: ComponentFixture<PublisherFormComponent>;
+  let component: PublisherFormTDComponent;
+  let fixture: ComponentFixture<PublisherFormTDComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PublisherFormComponent ]
+      declarations: [ PublisherFormTDComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PublisherFormComponent);
+    fixture = TestBed.createComponent(PublisherFormTDComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
