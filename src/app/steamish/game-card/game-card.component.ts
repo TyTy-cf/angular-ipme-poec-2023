@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {IGame} from "../../model/steamish/i-game";
+import {IGame} from "../../../model/steamish/i-game";
 
 @Component({
   selector: 'app-game-card',

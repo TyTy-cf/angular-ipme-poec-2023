@@ -1,0 +1,72 @@
+
+<h1>{{ title }}</h1>
+<form (ngSubmit)="onSubmit()" #publisherForm="ngForm" class="col-6 mx-auto mt-5">
+  <div>
+    <input
+      class="form-control"
+      placeholder="Nom"
+      name="publisher[name]"
+      [(ngModel)]="publisher.name"
+      #publisherName="ngModel"
+      [class.is-valid]="publisherName.valid"
+      [class.is-invalid]="publisherName.invalid && (publisherName.touched || publisherName.dirty)"
+      title="Le nom est obligatoire"
+      required
+    >
+    <div class="invalid-feedback"
+         *ngIf="publisherName.invalid && (publisherName.touched || publisherName.dirty) && publisherName.errors"
+    >
+      <div *ngIf="publisherName.errors['required']">
+        Le nom est obligatoire
+      </div>
+    </div>
+  </div>
+  <div class="my-5">
+    <input
+      class="form-control"
+      placeholder="Website"
+      name="publisher[website]"
+      [(ngModel)]="publisher.website"
+      #publisherWebsite="ngModel"
+      [class.is-valid]="publisherWebsite.valid"
+      [class.is-invalid]="publisherWebsite.invalid && (publisherWebsite.touched || publisherWebsite.dirty)"
+      title="Le website est obligatoire"
+      pattern="^(http|https)://(.*)"
+      required
+    >
+    <div class="invalid-feedback"
+         *ngIf="publisherWebsite.invalid && (publisherWebsite.touched || publisherWebsite.dirty) && publisherWebsite.errors"
+    >
+      <div *ngIf="publisherWebsite.errors['required']">
+        Le website est obligatoire
+      </div>
+      <div *ngIf="publisherWebsite.errors['pattern']">
+        Ce n'est pas un website valide
+      </div>
+    </div>
+  </div>
+  <div>
+    <input
+      class="form-control"
+      placeholder="Country"
+      name="publisher[country]"
+      [(ngModel)]="publisher.country.slug"
+      #publisherCountry="ngModel"
+      [class.is-valid]="publisherCountry.valid"
+      [class.is-invalid]="publisherCountry.invalid && (publisherCountry.touched || publisherCountry.dirty)"
+      title="Le pays est obligatoire"
+      required
+    >
+    <div class="invalid-feedback"
+         *ngIf="publisherCountry.invalid && (publisherCountry.touched || publisherCountry.dirty) && publisherCountry.errors"
+    >
+      <div *ngIf="publisherCountry.errors['required']">
+        Le pays est obligatoire
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary mt-5 d-flex mx-auto" type="submit" [disabled]="publisherForm.invalid">
+    Valider
+  </button>
+</form>
+

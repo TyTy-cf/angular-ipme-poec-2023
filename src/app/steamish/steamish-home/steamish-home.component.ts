@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {IGame} from "../../model/steamish/i-game";
-import {GameRepositoryService} from "../../service/steamish/game-repository.service";
+import {IGame} from "../../../model/steamish/i-game";
+import {GameRepositoryService} from "../../../service/steamish/game-repository.service";
 import {catchError, forkJoin, throwError} from "rxjs";
 
 @Component({

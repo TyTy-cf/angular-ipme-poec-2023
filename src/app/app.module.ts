@@ -9,8 +9,10 @@ import { YahtzeeComponent } from './yahtzee/yahtzee.component';
 import {HttpClientModule} from "@angular/common/http";
 import { KaamelotQuoteComponent } from './kaamelot-quote/kaamelot-quote.component';
 import { PokemonIndexComponent } from './pokemon-index/pokemon-index.component';
-import { SteamishHomeComponent } from './steamish-home/steamish-home.component';
-import { GameCardComponent } from './game-card/game-card.component';
+import { SteamishHomeComponent } from './steamish/steamish-home/steamish-home.component';
+import { GameCardComponent } from './steamish/game-card/game-card.component';
+import {FormsModule} from "@angular/forms";
+import { PublisherFormComponent } from './steamish/publisher-form/publisher-form.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,14 @@ import { GameCardComponent } from './game-card/game-card.component';
       KaamelotQuoteComponent,
       PokemonIndexComponent,
       SteamishHomeComponent,
-      GameCardComponent
+      GameCardComponent,
+      PublisherFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [
     {
