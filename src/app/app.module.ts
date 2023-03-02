@@ -18,6 +18,7 @@ import { AccountFormComponent } from './steamish/account-form/account-form.compo
 import { PaginatorComponent } from './paginator/paginator.component';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {HttpTokenInterceptor} from "../config/http-interceptor";
+import { CountriesComponent } from './countries/countries.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import {HttpTokenInterceptor} from "../config/http-interceptor";
       PublisherFormComponent,
       AccountFormComponent,
       PaginatorComponent,
+      CountriesComponent,
   ],
   imports: [
     BrowserModule,

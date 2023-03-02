@@ -8,8 +8,8 @@ import {SteamishHomeComponent} from "./steamish/steamish-home/steamish-home.comp
 import {PublisherFormTDComponent} from "./steamish/publisher-form-t-d/publisher-form-t-d.component";
 import {PublisherFormComponent} from "./steamish/publisher-form/publisher-form.component";
 import {AccountFormComponent} from "./steamish/account-form/account-form.component";
-import {IsSignedInGuard} from "../config/is-signed-in-guard";
 import {IsAdminGuard} from "../config/is-admin-guard";
+import {CountriesComponent} from "./countries/countries.component";
 
 const routes: Routes = [
   { path: 'cours', component: CourseComponent },
@@ -28,6 +28,8 @@ const routes: Routes = [
   },
   { path: 'steamish/account/new', component: AccountFormComponent },
   { path: 'steamish', component: SteamishHomeComponent },
+  { path: 'countries', component: CountriesComponent },
+  { path: '**', component: SteamishHomeComponent },
 ];
 
 @NgModule({
