@@ -1,16 +1,12 @@
 
 <div class="container">
   <div *ngIf="iPokeApiResponse; else loading">
-    <div class="d-flex justify-content-around">
-      <button class="btn btn-primary" (click)="getPage(iPokeApiResponse.previous)">
-        <
-      </button>
-      <button class="btn btn-primary" (click)="getPage(iPokeApiResponse.next)">
-        >
-      </button>
-    </div>
+    <app-paginator
+      [iPokeApiResponse]="iPokeApiResponse"
+      (urlToCall)="getPage($event)"
+    ></app-paginator>
     <div class="row" *ngIf="pokemons.length == 20; else loading">
-      <div class="col-2" *ngFor="let poke of pokemons">
+      <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let poke of pokemons">
         <img class="img-fluid"
              [src]="poke.isDisplayShiny ? poke.imageShiny : poke.imageDefault"
              (mouseenter)="poke.isDisplayShiny = !poke.isDisplayShiny"
@@ -21,6 +17,11 @@
         </p>
       </div>
     </div>
+    <app-paginator
+      [iPokeApiResponse]="iPokeApiResponse"
+      (urlToCall)="getPage($event)"
+      class="mb-5"
+    ></app-paginator>
   </div>
 </div>
 

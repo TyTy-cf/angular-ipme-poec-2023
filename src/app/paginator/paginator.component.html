@@ -1,0 +1,14 @@
+
+<div class="d-flex justify-content-around" *ngIf="iPokeApiResponse">
+  <button class="btn btn-primary"
+          (click)="urlToCall.emit(iPokeApiResponse.previous)"
+          [disabled]="iPokeApiResponse.previous === null"
+  >
+    <fa-icon [icon]="faArrowLeft"></fa-icon>
+  </button>
+  <button class="btn btn-primary"
+          (click)="urlToCall.emit(iPokeApiResponse.next)"
+          [disabled]="iPokeApiResponse.next === null">
+    <fa-icon [icon]="faArrowRight"></fa-icon>
+  </button>
+</div>

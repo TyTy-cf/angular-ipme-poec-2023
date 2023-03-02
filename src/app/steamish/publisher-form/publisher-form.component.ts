@@ -4,7 +4,8 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {PublisherRepositoryService} from "../../../service/steamish/publisher-repository.service";
 import {catchError, throwError} from "rxjs";
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
-import jwtDecode from "jwt-decode";
+import {ICountry} from "../../../model/steamish/i-country";
+import {CountryRepositoryService} from "../../../service/steamish/country-repository.service";
 
 @Component({
   selector: 'app-publisher-form',
@@ -17,15 +18,22 @@ export class PublisherFormComponent implements OnInit {
   publisher: Publisher = new Publisher();
   formGroupPublisher!: FormGroup;
   error: string|undefined;
+  countries: ICountry[] = [];
 
   constructor(
     private publisherRepository: PublisherRepositoryService,
+    private countryRepository: CountryRepositoryService,
     private httpClient: HttpClient,
     @Inject('rawUrl') private rawUrl: string
   ) {
   }
 
   ngOnInit(): void {
+    this.countryRepository.findAll()
+    .subscribe((countries) => {
+      this.countries = countries.items;
+      this.countries.sort((a, b) => a.nationality.localeCompare(b.nationality));
+    });
     this.formGroupPublisher = new FormGroup({
       name: new FormControl(
         this.publisher.name,
@@ -37,7 +45,8 @@ export class PublisherFormComponent implements OnInit {
         this.publisher.website,
         [
           Validators.required,
-          Validators.pattern('^(http|https)://(.*)')
+          Validators.pattern('^(http|https)://(.*)'),
+          Validators.minLength(8)
         ]
       ),
       country: new FormControl(

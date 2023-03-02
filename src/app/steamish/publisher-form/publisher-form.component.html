@@ -34,16 +34,23 @@
       <div *ngIf="website.errors['pattern']">
         Ce n'est pas un website valide
       </div>
+      <div *ngIf="website.errors['minlength']">
+        Le website doit faire minimum {{ website.errors['minlength'].requiredLength }}
+      </div>
     </div>
   </div>
   <div>
-    <input
-      class="form-control"
+    <select
+      class="form-select"
       formControlName="country"
-      placeholder="Country"
-      [class.is-invalid]="isFieldOnError('country')"
-      [class.is-valid]="country.valid"
     >
+      <option [ngValue]="null" disabled>Sélectionnez un pays...</option>
+      <option *ngFor="let countryIteration of countries"
+              [ngValue]="countryIteration"
+      >
+        {{countryIteration.nationality}}
+      </option>
+    </select>
     <div class="invalid-feedback"
          *ngIf="isFieldOnError('country') && country.errors"
     >

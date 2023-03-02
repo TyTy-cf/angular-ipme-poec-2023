@@ -16,11 +16,16 @@
     <a class="navbar-brand" routerLink="/steamish">
       Steamish
     </a>
-    <a class="navbar-brand" routerLink="/steamish/publisher/new">
+    <a class="navbar-brand"
+       routerLink="/steamish/publisher/new"
+    >
       New Publisher
     </a>
     <a class="navbar-brand" routerLink="/steamish/account/new">
       New account
+    </a>
+    <a class="navbar-brand router-link" (click)="disconnect()">
+      DC
     </a>
   </div>
 </nav>

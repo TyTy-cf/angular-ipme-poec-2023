@@ -2,6 +2,7 @@ import {Component, Inject, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {IAccount} from "../../../model/steamish/i-account";
+import {IToken} from "../../../model/steamish/i-token";
 
 @Component({
   selector: 'app-account-form',
@@ -77,7 +78,7 @@ export class AccountFormComponent implements OnInit {
 
   private getToken(): void {
     this.httpClient
-      .post(
+      .post<IToken>(
         this.rawUrl + 'login_check',
         {
           email: this.account.email,
@@ -90,7 +91,8 @@ export class AccountFormComponent implements OnInit {
         }
       )
       .subscribe((data) => {
-        console.log(data);
+        console.log(data.token);
+        localStorage.setItem('tokenJWT', data.token);
       });
   }
 }

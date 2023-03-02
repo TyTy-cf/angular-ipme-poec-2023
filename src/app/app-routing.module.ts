@@ -8,6 +8,8 @@ import {SteamishHomeComponent} from "./steamish/steamish-home/steamish-home.comp
 import {PublisherFormTDComponent} from "./steamish/publisher-form-t-d/publisher-form-t-d.component";
 import {PublisherFormComponent} from "./steamish/publisher-form/publisher-form.component";
 import {AccountFormComponent} from "./steamish/account-form/account-form.component";
+import {IsSignedInGuard} from "../config/is-signed-in-guard";
+import {IsAdminGuard} from "../config/is-admin-guard";
 
 const routes: Routes = [
   { path: 'cours', component: CourseComponent },
@@ -16,7 +18,14 @@ const routes: Routes = [
   { path: 'kaamelot', component: KaamelotQuoteComponent },
   { path: 'pokemon', component: PokemonIndexComponent },
   { path: 'steamish/publisher/new-template', component: PublisherFormTDComponent },
-  { path: 'steamish/publisher/new', component: PublisherFormComponent },
+  {
+    path: 'steamish/publisher/new',
+    component: PublisherFormComponent,
+    canActivate:
+    [
+      IsAdminGuard,
+    ]
+  },
   { path: 'steamish/account/new', component: AccountFormComponent },
   { path: 'steamish', component: SteamishHomeComponent },
 ];
