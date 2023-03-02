@@ -1,0 +1,26 @@
+
+### 1. API Country
+
+- Documentation :
+https://restcountries.com/#api-endpoints-v3-all
+
+- URL pour récupérer les données :
+https://restcountries.com/v3.1/all
+
+- Vous devez faire un component de nom "countries" (route : "/pays")
+- Il doit afficher les 250 pays du monde
+- Vous récupèrerez les données suivantes :
+  - nom (name > common)
+  - capital (capital => attention c'est un tableau !)
+  - contient (continents => attention c'est un tableau !)
+  - drapeau (flag > png)
+
+- Vous afficherez les données sous forme de table HTML
+
+### 2. API Country++
+
+- Lorsque vous cliquez sur un continent du pays
+
+- Vous allez sur le même component, mais avec une route différente, de nom : "pays/{continent}" où le {continent} est le nom du continent sur lequel vous avez cliqué.
+- Le component se recharge appelle l'URL suivante : https://restcountries.com/v2/region/{region}
+- Et affiche seulement les pays de ce continent
