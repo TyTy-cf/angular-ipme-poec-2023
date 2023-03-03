@@ -22,5 +22,5 @@ https://restcountries.com/v3.1/all
 - Lorsque vous cliquez sur un continent du pays
 
 - Vous allez sur le même component, mais avec une route différente, de nom : "pays/{continent}" où le {continent} est le nom du continent sur lequel vous avez cliqué.
-- Le component se recharge appelle l'URL suivante : https://restcountries.com/v2/region/{region}
+- Le component se recharge appelle l'URL suivante : https://restcountries.com/v3.1/region/{region}
 - Et affiche seulement les pays de ce continent

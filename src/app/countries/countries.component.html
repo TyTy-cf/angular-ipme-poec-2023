@@ -2,6 +2,16 @@
 <div class="container">
   <h1>{{ title }}</h1>
 
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active"
+          aria-current="page"
+          *ngIf="!continent; else continentCountries"
+      >
+        Tous les pays
+      </li>
+    </ol>
+  </nav>
   <table class="table table-striped table-hover">
     <thead>
       <tr>
@@ -17,8 +27,11 @@
           {{ country.name.common }}
         </td>
         <td>
-          <p *ngFor="let continent of country.continents">
-            {{ continent }}
+          <p  *ngFor="let continent of country.continents"
+              routerLink="/countries/{{continent}}"
+              class="router-link"
+          >
+              {{ continent }}
           </p>
         </td>
         <td>
@@ -27,11 +40,24 @@
           </p>
         </td>
         <td>
-          <img [src]="country.flags.png" class="w-25 img-fluid">
+          <img [src]="country.flags.png" class="img-fluid">
         </td>
       </tr>
     </tbody>
   </table>
 
 </div>
+
+<ng-template #continentCountries>
+  <li class="breadcrumb-item">
+    <a routerLink="/countries">
+      Tous les pays
+    </a>
+  </li>
+  <li class="breadcrumb-item active"
+      aria-current="page"
+  >
+    {{continent}}
+  </li>
+</ng-template>
 

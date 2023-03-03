@@ -29,6 +29,7 @@ const routes: Routes = [
   { path: 'steamish/account/new', component: AccountFormComponent },
   { path: 'steamish', component: SteamishHomeComponent },
   { path: 'countries', component: CountriesComponent },
+  { path: 'countries/:continent', component: CountriesComponent },
   { path: '**', component: SteamishHomeComponent },
 ];
 
